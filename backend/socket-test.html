@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Socket.IO Test</title>
+</head>
+
+<body>
+
+    <h1>Beauty Parlour Socket.IO Test</h1>
+
+    <button onclick="sendMessage()">
+        Send Test Message
+    </button>
+
+    <p id="status">Connecting...</p>
+
+    <script src="http://localhost:5000/socket.io/socket.io.js"></script>
+
+    <script>
+        const socket = io("http://localhost:5000");
+
+        socket.on("connect", () => {
+            document.getElementById("status").innerText =
+                "Connected: " + socket.id;
+
+            console.log("Connected:", socket.id);
+        });
+
+        function sendMessage() {
+            socket.emit("testMessage", "Hello from Beauty Parlour");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,4928 @@
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: #faf7f5;
+  color: #292323;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+
+/* ================================
+   DASHBOARD PAGE
+================================ */
+
+.dashboard-page {
+  min-height: 100vh;
+  background: #faf7f5;
+  padding-bottom: 100px;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.dashboard-header {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 28px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: #8d5266;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.brand-section h1 {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: 600;
+  color: #3a2b2f;
+}
+
+.brand-section p {
+  margin-top: 3px;
+  font-size: 12px;
+  color: #95878a;
+  letter-spacing: 0.5px;
+}
+
+.logout-btn {
+  border: 1px solid #dfd2d5;
+  background: white;
+  color: #744655;
+
+  padding: 10px 20px;
+  border-radius: 25px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #744655;
+  color: white;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.dashboard-hero {
+  width: calc(100% - 80px);
+  max-width: 1200px;
+  min-height: 390px;
+
+  margin: 10px auto 65px;
+
+  border-radius: 30px;
+  overflow: hidden;
+
+  background: #ead9d3;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-content {
+  padding: 65px 60px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-small-text {
+  color: #8d5266;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  margin-bottom: 18px;
+}
+
+.hero-content h2 {
+  font-family: Georgia, serif;
+
+  font-size: 48px;
+  line-height: 1.08;
+
+  font-weight: 500;
+  color: #3c2c30;
+
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  max-width: 470px;
+
+  color: #75676a;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  margin-bottom: 28px;
+}
+
+.hero-btn {
+  width: fit-content;
+
+  border: none;
+  border-radius: 28px;
+
+  padding: 13px 24px;
+
+  background: #8d5266;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  transition: 0.3s;
+}
+
+.hero-btn span {
+  font-size: 18px;
+}
+
+.hero-btn:hover {
+  background: #714050;
+  transform: translateY(-2px);
+}
+
+.hero-image {
+  height: 100%;
+  min-height: 390px;
+}
+
+.hero-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ================================
+   SECTION
+================================ */
+
+.dashboard-section {
+  width: calc(100% - 80px);
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.section-heading span {
+  color: #a06c7c;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  margin-top: 7px;
+
+  font-family: Georgia, serif;
+
+  font-size: 30px;
+  font-weight: 500;
+
+  color: #3c2c30;
+}
+
+.view-all-btn {
+  border: none;
+  background: transparent;
+
+  color: #8d5266;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.view-all-btn:hover {
+  text-decoration: underline;
+}
+
+
+/* ================================
+   DASHBOARD CARDS
+================================ */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+.dashboard-card {
+  background: white;
+
+  border-radius: 22px;
+  overflow: hidden;
+
+  border: 1px solid #eee5e3;
+
+  box-shadow:
+    0 8px 30px rgba(70, 40, 45, 0.06);
+
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 15px 35px rgba(70, 40, 45, 0.12);
+}
+
+.card-image {
+  height: 190px;
+  overflow: hidden;
+}
+
+.card-image img {
+  height: 100%;
+  object-fit: cover;
+
+  transition: 0.5s;
+}
+
+.dashboard-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 22px;
+}
+
+.card-label {
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+
+  color: #a06c7c;
+}
+
+.card-content h3 {
+  font-family: Georgia, serif;
+
+  font-size: 21px;
+  font-weight: 500;
+
+  color: #3c2c30;
+
+  margin: 8px 0 9px;
+}
+
+.card-content p {
+  color: #817477;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  min-height: 42px;
+
+  margin-bottom: 18px;
+}
+
+.card-content button {
+  border: none;
+  background: transparent;
+
+  color: #8d5266;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.card-content button span {
+  font-size: 17px;
+  transition: 0.2s;
+}
+
+.dashboard-card:hover .card-content button span {
+  transform: translateX(4px);
+}
+
+
+/* ================================
+   BOTTOM NAVIGATION
+================================ */
+
+.bottom-nav {
+  position: fixed;
+
+  left: 50%;
+  bottom: 18px;
+
+  transform: translateX(-50%);
+
+  width: min(600px, calc(100% - 30px));
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #eee4e5;
+
+  border-radius: 25px;
+
+  padding: 10px 15px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  box-shadow:
+    0 10px 35px rgba(50, 30, 35, 0.13);
+
+  z-index: 1000;
+
+  backdrop-filter: blur(15px);
+}
+
+.bottom-nav button {
+  border: none;
+  background: transparent;
+
+  color: #9b8d90;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  font-size: 10px;
+
+  min-width: 80px;
+
+  transition: 0.25s;
+}
+
+.nav-icon {
+  width: 34px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+.bottom-nav button.active {
+  color: #8d5266;
+  font-weight: 700;
+}
+
+.bottom-nav button.active .nav-icon {
+  background: #f1e2e6;
+
+  border-radius: 12px;
+
+  width: 40px;
+  height: 30px;
+}
+
+.bottom-nav button:hover {
+  color: #8d5266;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+  .dashboard-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    height: 280px;
+    min-height: 280px;
+    order: -1;
+  }
+
+  .hero-content {
+    padding: 45px;
+  }
+
+  .hero-content h2 {
+    font-size: 40px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+  .dashboard-page {
+    padding-bottom: 95px;
+  }
+
+  .dashboard-header {
+    padding: 20px 18px;
+  }
+
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .brand-section h1 {
+    font-size: 19px;
+  }
+
+  .brand-section p {
+    font-size: 10px;
+  }
+
+  .logout-btn {
+    padding: 8px 14px;
+    font-size: 11px;
+  }
+
+
+  .dashboard-hero {
+    width: calc(100% - 30px);
+
+    margin: 5px auto 45px;
+
+    border-radius: 24px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-image {
+    order: -1;
+
+    height: 230px;
+    min-height: 230px;
+  }
+
+  .hero-content {
+    padding: 35px 25px 38px;
+  }
+
+  .hero-small-text {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .hero-content h2 {
+    font-size: 34px;
+  }
+
+  .hero-content p {
+    font-size: 13px;
+  }
+
+  .hero-btn {
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+
+
+  .dashboard-section {
+    width: calc(100% - 30px);
+  }
+
+  .section-heading {
+    align-items: center;
+  }
+
+  .section-heading h2 {
+    font-size: 25px;
+  }
+
+  .view-all-btn {
+    font-size: 11px;
+  }
+
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .card-image {
+    height: 190px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+
+  .bottom-nav {
+    bottom: 12px;
+
+    width: calc(100% - 24px);
+
+    padding: 9px 5px;
+
+    border-radius: 22px;
+  }
+
+  .bottom-nav button {
+    min-width: 60px;
+    font-size: 9px;
+  }
+
+  .nav-icon {
+    font-size: 17px;
+  }
+
+}
+
+
+
+/* ========================================
+   SERVICES PAGE
+======================================== */
+
+.services-page {
+  min-height: 100vh;
+  background: #faf7f5;
+  padding-bottom: 110px;
+}
+
+
+/* ========================================
+   SERVICES HEADER
+======================================== */
+
+.services-header {
+  width: calc(100% - 80px);
+  max-width: 1200px;
+
+  margin: auto;
+  padding: 38px 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.services-title span {
+  color: #a06c7c;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.services-title h1 {
+  margin-top: 8px;
+
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+  font-weight: 500;
+
+  color: #3c2c30;
+}
+
+.services-title p {
+  margin-top: 8px;
+
+  color: #817477;
+
+  font-size: 14px;
+}
+
+
+/* Home Button */
+
+.home-btn {
+  border: 1px solid #dfd2d5;
+
+  background: white;
+
+  color: #744655;
+
+  padding: 11px 20px;
+
+  border-radius: 25px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: 0.3s;
+}
+
+.home-btn:hover {
+  background: #744655;
+  color: white;
+}
+
+.simple-icon {
+  font-size: 18px;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.services-content {
+  width: calc(100% - 80px);
+  max-width: 1200px;
+
+  margin: auto;
+}
+
+
+/* Section Heading */
+
+.services-section-title {
+  margin-bottom: 25px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.services-section-title span {
+  color: #a06c7c;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.services-section-title h2 {
+  margin-top: 7px;
+
+  font-family: Georgia, serif;
+
+  color: #3c2c30;
+
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.services-section-title p {
+  color: #95878a;
+
+  font-size: 12px;
+}
+
+
+/* ========================================
+   SERVICES GRID
+======================================== */
+
+.services-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+
+/* ========================================
+   SERVICE CARD
+======================================== */
+
+.service-card {
+  background: white;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  border: 1px solid #eee5e3;
+
+  box-shadow:
+    0 8px 30px rgba(70, 40, 45, 0.06);
+
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 15px 35px rgba(70, 40, 45, 0.12);
+}
+
+
+/* ========================================
+   SERVICE IMAGE
+======================================== */
+
+.service-image-container {
+  width: 100%;
+  height: 220px;
+
+  overflow: hidden;
+
+  background: #ead9d3;
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: 0.5s;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.05);
+}
+
+.service-no-image {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #8d5266;
+
+  font-family: Georgia, serif;
+
+  font-size: 20px;
+}
+
+
+/* ========================================
+   SERVICE INFO
+======================================== */
+
+.service-info {
+  padding: 23px;
+}
+
+.service-label {
+  color: #a06c7c;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.service-info h2 {
+  margin: 8px 0 9px;
+
+  font-family: Georgia, serif;
+
+  color: #3c2c30;
+
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.service-description {
+  color: #817477;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  min-height: 42px;
+
+  margin-bottom: 20px;
+}
+
+
+/* ========================================
+   SERVICE DETAILS
+======================================== */
+
+.service-details {
+  display: flex;
+
+  gap: 25px;
+
+  padding: 15px 0;
+
+  margin-bottom: 17px;
+
+  border-top: 1px solid #eee5e3;
+  border-bottom: 1px solid #eee5e3;
+}
+
+.service-detail {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+.detail-icon {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 10px;
+
+  background: #f3e5e8;
+
+  color: #8d5266;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.service-detail div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.service-detail small {
+  color: #aaa;
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+
+  font-weight: 700;
+}
+
+.service-detail strong {
+  color: #4b383d;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* ========================================
+   BOOK BUTTON
+======================================== */
+
+.book-service-btn {
+  width: 100%;
+
+  border: none;
+
+  background: #8d5266;
+
+  color: white;
+
+  border-radius: 25px;
+
+  padding: 13px 18px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  transition: 0.3s;
+}
+
+.book-service-btn strong {
+  font-size: 17px;
+
+  transition: 0.2s;
+}
+
+.book-service-btn:hover {
+  background: #714050;
+}
+
+.book-service-btn:hover strong {
+  transform: translateX(4px);
+}
+
+
+/* ========================================
+   BOTTOM NAVIGATION
+======================================== */
+
+.services-bottom-nav {
+  position: fixed;
+
+  left: 50%;
+  bottom: 18px;
+
+  transform: translateX(-50%);
+
+  width: min(600px, calc(100% - 30px));
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #eee4e5;
+
+  border-radius: 25px;
+
+  padding: 10px 15px;
+
+  display: flex;
+
+  justify-content: space-around;
+
+  align-items: center;
+
+  box-shadow:
+    0 10px 35px rgba(50, 30, 35, 0.13);
+
+  z-index: 1000;
+
+  backdrop-filter: blur(15px);
+}
+
+.services-bottom-nav button {
+  border: none;
+
+  background: transparent;
+
+  color: #9b8d90;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  font-size: 10px;
+
+  min-width: 80px;
+
+  transition: 0.25s;
+}
+
+.services-bottom-nav .nav-icon {
+  width: 34px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+.services-bottom-nav button.active {
+  color: #8d5266;
+
+  font-weight: 700;
+}
+
+.services-bottom-nav button.active .nav-icon {
+  background: #f1e2e6;
+
+  border-radius: 12px;
+
+  width: 40px;
+  height: 30px;
+}
+
+.services-bottom-nav button:hover {
+  color: #8d5266;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .services-page {
+    padding-bottom: 100px;
+  }
+
+  .services-header {
+    width: calc(100% - 30px);
+
+    padding: 25px 0 25px;
+
+    align-items: flex-start;
+  }
+
+  .services-title h1 {
+    font-size: 30px;
+  }
+
+  .services-title p {
+    font-size: 12px;
+
+    max-width: 220px;
+
+    line-height: 1.5;
+  }
+
+  .home-btn {
+    padding: 9px 13px;
+
+    font-size: 11px;
+  }
+
+
+  .services-content {
+    width: calc(100% - 30px);
+  }
+
+  .services-section-title {
+    align-items: center;
+
+    margin-bottom: 20px;
+  }
+
+  .services-section-title h2 {
+    font-size: 24px;
+  }
+
+  .services-section-title p {
+    font-size: 10px;
+  }
+
+
+  .services-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .service-image-container {
+    height: 210px;
+  }
+
+
+  .service-info {
+    padding: 20px;
+  }
+
+
+  .service-info h2 {
+    font-size: 21px;
+  }
+
+
+  .service-description {
+    font-size: 12px;
+  }
+
+
+  .service-details {
+    gap: 20px;
+  }
+
+
+  .services-bottom-nav {
+    bottom: 12px;
+
+    width: calc(100% - 24px);
+
+    padding: 9px 5px;
+
+    border-radius: 22px;
+  }
+
+  .services-bottom-nav button {
+    min-width: 60px;
+
+    font-size: 9px;
+  }
+
+  .services-bottom-nav .nav-icon {
+    font-size: 17px;
+  }
+
+}
+
+
+
+/* ========================================
+   BOOKING PAGE
+======================================== */
+
+.booking-page {
+  min-height: 100vh;
+  background: #faf7f5;
+  padding-bottom: 130px;
+}
+
+
+/* ========================================
+   BOOKING HEADER
+======================================== */
+
+.booking-header {
+  width: calc(100% - 80px);
+  max-width: 1200px;
+
+  margin: auto;
+  padding: 35px 0 25px;
+
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.back-btn {
+  position: absolute;
+  left: 0;
+  top: 42px;
+
+  border: 1px solid #dfd2d5;
+  background: white;
+
+  color: #744655;
+
+  padding: 10px 18px;
+
+  border-radius: 25px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: 0.3s;
+}
+
+.back-btn span {
+  font-size: 17px;
+}
+
+.back-btn:hover {
+  background: #744655;
+  color: white;
+}
+
+.booking-title {
+  text-align: center;
+}
+
+.booking-title > span {
+  color: #a06c7c;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.booking-title h1 {
+  margin-top: 8px;
+
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+  font-weight: 500;
+
+  color: #3c2c30;
+}
+
+.booking-title p {
+  margin-top: 8px;
+
+  color: #817477;
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   BOOKING CONTENT
+======================================== */
+
+.booking-content {
+  width: calc(100% - 80px);
+  max-width: 1100px;
+
+  margin: 25px auto 0;
+}
+
+.booking-layout {
+  display: grid;
+
+  grid-template-columns:
+    0.9fr 1.1fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+
+/* ========================================
+   LEFT INTRO
+======================================== */
+
+.booking-intro {
+  padding: 20px 0;
+}
+
+.booking-label {
+  color: #a06c7c;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.booking-intro h2 {
+  margin-top: 12px;
+
+  font-family: Georgia, serif;
+
+  color: #3c2c30;
+
+  font-size: 43px;
+  line-height: 1.15;
+
+  font-weight: 500;
+}
+
+.booking-intro > p {
+  margin-top: 20px;
+
+  max-width: 440px;
+
+  color: #817477;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   BOOKING INFO
+======================================== */
+
+.booking-info-list {
+  margin-top: 35px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.booking-info-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.booking-info-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  border-radius: 13px;
+
+  background: #f1e2e6;
+
+  color: #8d5266;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.booking-info-item h3 {
+  color: #4b383d;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.booking-info-item p {
+  margin-top: 3px;
+
+  color: #9a8d90;
+
+  font-size: 11px;
+}
+
+
+/* ========================================
+   BOOKING CARD
+======================================== */
+
+.booking-card {
+  background: white;
+
+  border-radius: 28px;
+
+  padding: 35px;
+
+  border: 1px solid #eee5e3;
+
+  box-shadow:
+    0 15px 40px rgba(70, 40, 45, 0.08);
+}
+
+
+/* Card Header */
+
+.booking-card-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.booking-card-header > div:first-child > span {
+  color: #a06c7c;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+}
+
+.booking-card-header h2 {
+  margin-top: 6px;
+
+  font-family: Georgia, serif;
+
+  color: #3c2c30;
+
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.booking-card-icon {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 14px;
+
+  background: #f1e2e6;
+
+  color: #8d5266;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.booking-field {
+  margin-bottom: 21px;
+}
+
+.booking-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #5d4a4f;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.booking-field select,
+.booking-field input {
+  width: 100%;
+
+  height: 48px;
+
+  padding: 0 15px;
+
+  border: 1px solid #e4d9db;
+
+  border-radius: 13px;
+
+  background: #fdfafa;
+
+  color: #4b383d;
+
+  font-size: 13px;
+
+  outline: none;
+
+  transition: 0.25s;
+}
+
+.booking-field select:focus,
+.booking-field input:focus {
+  border-color: #a06c7c;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 3px rgba(141, 82, 102, 0.08);
+}
+
+
+/* ========================================
+   CONFIRM BUTTON
+======================================== */
+
+.confirm-booking-btn {
+  width: 100%;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background: #8d5266;
+
+  color: white;
+
+  padding: 14px 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.confirm-booking-btn strong {
+  font-size: 18px;
+
+  transition: 0.2s;
+}
+
+.confirm-booking-btn:hover {
+  background: #714050;
+}
+
+.confirm-booking-btn:hover strong {
+  transform: translateX(4px);
+}
+
+
+/* ========================================
+   PAYMENT BOX
+======================================== */
+
+.payment-box {
+  margin-top: 25px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #eee5e3;
+}
+
+.payment-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment-header > div:first-child > span {
+  color: #a06c7c;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.payment-header h3 {
+  margin-top: 6px;
+
+  color: #3c2c30;
+
+  font-family: Georgia, serif;
+
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.payment-symbol {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #f1e2e6;
+
+  color: #8d5266;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+}
+
+.payment-box > p {
+  margin: 14px 0 18px;
+
+  color: #817477;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+.payment-btn {
+  width: 100%;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background: #4b383d;
+
+  color: white;
+
+  padding: 13px 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.payment-btn strong {
+  font-size: 17px;
+}
+
+.payment-btn:hover {
+  background: #2f2427;
+}
+
+
+/* ========================================
+   PAYMENT SUCCESS
+======================================== */
+
+.paid-message {
+  text-align: center;
+
+  padding: 5px 0;
+}
+
+.success-mark {
+  width: 52px;
+  height: 52px;
+
+  margin: 0 auto 13px;
+
+  border-radius: 50%;
+
+  background: #e9f4ed;
+
+  color: #4b8b64;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.paid-label {
+  color: #5c9a72;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.paid-message h3 {
+  margin-top: 7px;
+
+  color: #3c2c30;
+
+  font-family: Georgia, serif;
+
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.paid-message p {
+  margin-top: 8px;
+
+  color: #817477;
+
+  font-size: 12px;
+}
+
+.paid-message p b {
+  color: #4b8b64;
+}
+
+.view-appointments-btn {
+  width: 100%;
+
+  margin-top: 20px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background: #8d5266;
+
+  color: white;
+
+  padding: 13px 18px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  transition: 0.3s;
+}
+
+.view-appointments-btn span {
+  font-size: 17px;
+}
+
+.view-appointments-btn:hover {
+  background: #714050;
+}
+
+
+/* ========================================
+   BOOKING BOTTOM NAV
+======================================== */
+
+.booking-bottom-nav {
+  position: fixed;
+
+  left: 50%;
+  bottom: 18px;
+
+  transform: translateX(-50%);
+
+  width: min(600px, calc(100% - 30px));
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #eee4e5;
+
+  border-radius: 25px;
+
+  padding: 10px 15px;
+
+  display: flex;
+
+  justify-content: space-around;
+  align-items: center;
+
+  box-shadow:
+    0 10px 35px rgba(50, 30, 35, 0.13);
+
+  z-index: 1000;
+
+  backdrop-filter: blur(15px);
+}
+
+.booking-bottom-nav button {
+  border: none;
+
+  background: transparent;
+
+  color: #9b8d90;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  font-size: 10px;
+
+  min-width: 80px;
+
+  transition: 0.25s;
+}
+
+.booking-bottom-nav .nav-icon {
+  width: 34px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+.booking-bottom-nav button.active {
+  color: #8d5266;
+
+  font-weight: 700;
+}
+
+.booking-bottom-nav button.active .nav-icon {
+  background: #f1e2e6;
+
+  border-radius: 12px;
+
+  width: 40px;
+  height: 30px;
+}
+
+.booking-bottom-nav button:hover {
+  color: #8d5266;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .booking-layout {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .booking-intro {
+    text-align: center;
+  }
+
+  .booking-intro > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .booking-info-list {
+    max-width: 450px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .booking-page {
+    padding-bottom: 110px;
+  }
+
+  .booking-header {
+    width: calc(100% - 30px);
+
+    padding: 25px 0 20px;
+
+    display: block;
+  }
+
+  .back-btn {
+    position: static;
+
+    width: fit-content;
+
+    margin-bottom: 25px;
+
+    padding: 9px 14px;
+  }
+
+  .booking-title {
+    text-align: left;
+  }
+
+  .booking-title h1 {
+    font-size: 31px;
+  }
+
+  .booking-title p {
+    font-size: 12px;
+  }
+
+
+  .booking-content {
+    width: calc(100% - 30px);
+
+    margin-top: 10px;
+  }
+
+  .booking-layout {
+    gap: 25px;
+  }
+
+
+  .booking-intro {
+    text-align: left;
+
+    padding: 10px 0;
+  }
+
+  .booking-intro h2 {
+    font-size: 33px;
+  }
+
+  .booking-intro > p {
+    font-size: 13px;
+  }
+
+
+  .booking-info-list {
+    gap: 16px;
+  }
+
+  .booking-info-item p {
+    font-size: 10px;
+  }
+
+
+  .booking-card {
+    padding: 23px 20px;
+
+    border-radius: 23px;
+  }
+
+  .booking-card-header h2 {
+    font-size: 21px;
+  }
+
+  .booking-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .booking-bottom-nav {
+    bottom: 12px;
+
+    width: calc(100% - 24px);
+
+    padding: 9px 5px;
+
+    border-radius: 22px;
+  }
+
+  .booking-bottom-nav button {
+    min-width: 60px;
+
+    font-size: 9px;
+  }
+
+  .booking-bottom-nav .nav-icon {
+    font-size: 17px;
+  }
+
+}
+
+
+
+/* ========================================
+   MY APPOINTMENTS
+======================================== */
+
+.appointments-page {
+  min-height: 100vh;
+  background: #faf7f5;
+  padding-bottom: 150px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.appointments-header {
+  width: calc(100% - 80px);
+  max-width: 1200px;
+
+  margin: auto;
+  padding: 38px 0 30px;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+}
+
+.appointment-back-btn {
+  position: absolute;
+
+  left: 0;
+  top: 42px;
+
+  border: 1px solid #dfd2d5;
+
+  background: white;
+
+  color: #744655;
+
+  padding: 10px 18px;
+
+  border-radius: 25px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: 0.3s;
+}
+
+.appointment-back-btn span {
+  font-size: 17px;
+}
+
+.appointment-back-btn:hover {
+  background: #744655;
+  color: white;
+}
+
+
+/* Title */
+
+.appointments-title {
+  text-align: center;
+}
+
+.appointments-title > span {
+  color: #a06c7c;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.appointments-title h1 {
+  margin-top: 8px;
+
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+  font-weight: 500;
+
+  color: #3c2c30;
+}
+
+.appointments-title p {
+  margin-top: 8px;
+
+  color: #817477;
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.appointments-content {
+  width: calc(100% - 80px);
+  max-width: 1050px;
+
+  margin: 25px auto;
+}
+
+.appointments-section-heading {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.appointments-section-heading > div > span {
+  color: #a06c7c;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.appointments-section-heading h2 {
+  margin-top: 7px;
+
+  font-family: Georgia, serif;
+
+  color: #3c2c30;
+
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.appointments-section-heading > p {
+  color: #95878a;
+
+  font-size: 12px;
+}
+
+
+/* ========================================
+   APPOINTMENT LIST
+======================================== */
+
+.appointments-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* ========================================
+   APPOINTMENT CARD
+======================================== */
+
+.appointment-card {
+  background: white;
+
+  border: 1px solid #eee5e3;
+
+  border-radius: 20px;
+
+  padding: 20px 24px;
+
+  display: grid;
+
+  grid-template-columns:
+    80px 1fr auto;
+
+  align-items: center;
+
+  gap: 25px;
+
+  box-shadow:
+    0 7px 25px rgba(70, 40, 45, 0.05);
+
+  transition: 0.3s;
+}
+
+.appointment-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(70, 40, 45, 0.09);
+}
+
+
+/* ========================================
+   DATE
+======================================== */
+
+.appointment-date {
+  width: 70px;
+  height: 80px;
+
+  border-radius: 16px;
+
+  background: #f3e5e8;
+
+  color: #8d5266;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+}
+
+.appointment-date span {
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.appointment-date strong {
+  font-family: Georgia, serif;
+
+  font-size: 28px;
+
+  font-weight: 500;
+}
+
+.appointment-date small {
+  color: #a06c7c;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+
+/* ========================================
+   APPOINTMENT INFO
+======================================== */
+
+.appointment-label {
+  color: #a06c7c;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.appointment-info h2 {
+  margin-top: 6px;
+
+  font-family: Georgia, serif;
+
+  color: #3c2c30;
+
+  font-size: 22px;
+
+  font-weight: 500;
+}
+
+.appointment-time {
+  margin-top: 5px;
+
+  color: #95878a;
+
+  font-size: 11px;
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+.status-badge {
+  min-width: 100px;
+
+  padding: 8px 13px;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: capitalize;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+
+/* Pending */
+
+.status-badge.pending {
+  background: #fff4df;
+
+  color: #b17a2d;
+}
+
+
+/* Confirmed */
+
+.status-badge.confirmed {
+  background: #eaf5ed;
+
+  color: #4f8b63;
+}
+
+
+/* Cancelled */
+
+.status-badge.cancelled {
+  background: #fbeaec;
+
+  color: #c45d6b;
+}
+
+
+/* ========================================
+   ERROR
+======================================== */
+
+.appointment-error {
+  width: calc(100% - 80px);
+  max-width: 700px;
+
+  margin: 40px auto;
+
+  padding: 25px;
+
+  border-radius: 18px;
+
+  background: #fff0f1;
+
+  border: 1px solid #f2d5d8;
+
+  text-align: center;
+
+  color: #b54d5c;
+}
+
+.appointment-error strong {
+  font-size: 15px;
+}
+
+.appointment-error p {
+  margin-top: 7px;
+
+  font-size: 12px;
+}
+
+
+/* ========================================
+   EMPTY APPOINTMENTS
+======================================== */
+
+.empty-appointments {
+  width: min(500px, calc(100% - 40px));
+
+  margin: 80px auto;
+
+  background: white;
+
+  border: 1px solid #eee5e3;
+
+  border-radius: 28px;
+
+  padding: 50px 40px;
+
+  text-align: center;
+
+  box-shadow:
+    0 12px 35px rgba(70, 40, 45, 0.07);
+}
+
+.empty-icon {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  background: #f3e5e8;
+
+  color: #8d5266;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 25px;
+}
+
+.empty-label {
+  color: #a06c7c;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.empty-appointments h2 {
+  margin-top: 9px;
+
+  font-family: Georgia, serif;
+
+  color: #3c2c30;
+
+  font-size: 27px;
+
+  font-weight: 500;
+}
+
+.empty-appointments p {
+  margin: 12px auto 22px;
+
+  max-width: 350px;
+
+  color: #817477;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.empty-appointments button {
+  border: none;
+
+  background: #8d5266;
+
+  color: white;
+
+  border-radius: 25px;
+
+  padding: 13px 22px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  transition: 0.3s;
+}
+
+.empty-appointments button span {
+  font-size: 17px;
+}
+
+.empty-appointments button:hover {
+  background: #714050;
+}
+
+
+/* ========================================
+   BOTTOM NAV
+======================================== */
+
+.appointments-bottom-nav {
+  position: fixed;
+
+  left: 50%;
+  bottom: 18px;
+
+  transform: translateX(-50%);
+
+  width: min(600px, calc(100% - 30px));
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #eee4e5;
+
+  border-radius: 25px;
+
+  padding: 10px 15px;
+
+  display: flex;
+
+  justify-content: space-around;
+
+  align-items: center;
+
+  box-shadow:
+    0 10px 35px rgba(50, 30, 35, 0.13);
+
+  z-index: 1000;
+
+  backdrop-filter: blur(15px);
+}
+
+.appointments-bottom-nav button {
+  border: none;
+
+  background: transparent;
+
+  color: #9b8d90;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  font-size: 10px;
+
+  min-width: 80px;
+
+  transition: 0.25s;
+}
+
+.appointments-bottom-nav .nav-icon {
+  width: 34px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+.appointments-bottom-nav button.active {
+  color: #8d5266;
+
+  font-weight: 700;
+}
+
+.appointments-bottom-nav button.active .nav-icon {
+  background: #f1e2e6;
+
+  border-radius: 12px;
+
+  width: 40px;
+  height: 30px;
+}
+
+.appointments-bottom-nav button:hover {
+  color: #8d5266;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .appointments-page {
+    padding-bottom: 120px;
+  }
+
+  .appointments-header {
+    width: calc(100% - 30px);
+
+    padding: 25px 0;
+
+    display: block;
+  }
+
+  .appointment-back-btn {
+    position: static;
+
+    width: fit-content;
+
+    margin-bottom: 25px;
+
+    padding: 9px 14px;
+  }
+
+  .appointments-title {
+    text-align: left;
+  }
+
+  .appointments-title h1 {
+    font-size: 31px;
+  }
+
+  .appointments-title p {
+    font-size: 12px;
+  }
+
+
+  .appointments-content {
+    width: calc(100% - 30px);
+
+    margin-top: 10px;
+  }
+
+  .appointments-section-heading {
+    align-items: center;
+  }
+
+  .appointments-section-heading h2 {
+    font-size: 24px;
+  }
+
+  .appointments-section-heading > p {
+    font-size: 10px;
+  }
+
+
+  .appointment-card {
+    grid-template-columns: 65px 1fr;
+
+    gap: 15px;
+
+    padding: 17px;
+  }
+
+  .appointment-date {
+    width: 60px;
+    height: 70px;
+  }
+
+  .appointment-date strong {
+    font-size: 24px;
+  }
+
+  .appointment-info h2 {
+    font-size: 19px;
+  }
+
+  .appointment-time {
+    font-size: 10px;
+  }
+
+
+  .status-badge {
+    grid-column: 2;
+
+    justify-self: start;
+
+    min-width: auto;
+
+    padding: 7px 12px;
+  }
+
+
+  .empty-appointments {
+    margin: 50px auto;
+
+    padding: 40px 25px;
+  }
+
+
+  .appointments-bottom-nav {
+    bottom: 12px;
+
+    width: calc(100% - 24px);
+
+    padding: 9px 5px;
+
+    border-radius: 22px;
+  }
+
+  .appointments-bottom-nav button {
+    min-width: 60px;
+
+    font-size: 9px;
+  }
+
+  .appointments-bottom-nav .nav-icon {
+    font-size: 17px;
+  }
+
+}
+
+
+
+
+/* ========================================
+   ADMIN DASHBOARD
+======================================== */
+
+.admin-page {
+  min-height: 100vh;
+
+  background: #faf7f5;
+
+  padding-bottom: 140px;
+
+  color: #3c2c30;
+}
+
+
+/* ========================================
+   ADMIN HEADER
+======================================== */
+
+.admin-header {
+  width: calc(100% - 80px);
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 32px 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.admin-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+}
+
+
+.admin-brand-mark {
+  width: 58px;
+
+  height: 58px;
+
+  border-radius: 50%;
+
+  background: #96536b;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+
+  font-weight: 600;
+}
+
+
+.admin-brand h1 {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 28px;
+
+  font-weight: 600;
+
+  color: #2f2427;
+}
+
+
+.admin-brand p {
+  margin-top: 6px;
+
+  color: #a06c7c;
+
+  font-size: 12px;
+
+  letter-spacing: 0.5px;
+}
+
+
+.admin-logout {
+  border: 1px solid #dfd2d5;
+
+  background: white;
+
+  color: #744655;
+
+  padding: 12px 25px;
+
+  border-radius: 28px;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+
+.admin-logout:hover {
+  background: #96536b;
+
+  color: white;
+
+  border-color: #96536b;
+}
+
+
+/* ========================================
+   WELCOME BANNER
+======================================== */
+
+.admin-banner {
+  width: calc(100% - 80px);
+
+  max-width: 1200px;
+
+  min-height: 300px;
+
+  margin: 20px auto 50px;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  background: #ead9d3;
+
+  display: flex;
+
+  align-items: center;
+}
+
+
+.admin-banner-content {
+  width: 55%;
+
+  padding: 55px 70px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.admin-banner-content > span {
+  color: #96536b;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+.admin-banner-content h2 {
+  margin: 16px 0;
+
+  font-family: Georgia, serif;
+
+  color: #3c2c30;
+
+  font-size: 43px;
+
+  line-height: 1.1;
+
+  font-weight: 500;
+}
+
+
+.admin-banner-content p {
+  max-width: 480px;
+
+  color: #765f66;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* Decorative circles */
+
+.admin-banner-decoration {
+  position: absolute;
+
+  right: -80px;
+
+  top: -80px;
+
+  width: 500px;
+
+  height: 500px;
+}
+
+
+.admin-banner-decoration div {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(150, 83, 107, 0.22);
+}
+
+
+.admin-banner-decoration div:nth-child(1) {
+  width: 280px;
+
+  height: 280px;
+
+  right: 30px;
+
+  top: 40px;
+}
+
+
+.admin-banner-decoration div:nth-child(2) {
+  width: 380px;
+
+  height: 380px;
+
+  right: -20px;
+
+  top: -10px;
+}
+
+
+.admin-banner-decoration div:nth-child(3) {
+  width: 480px;
+
+  height: 480px;
+
+  right: -70px;
+
+  top: -60px;
+}
+
+
+/* ========================================
+   BOOKING HEADER
+======================================== */
+
+.admin-bookings-header {
+  width: calc(100% - 80px);
+
+  max-width: 1100px;
+
+  margin: 0 auto 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+}
+
+
+.admin-bookings-header > div:first-child > span {
+  color: #a06c7c;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+.admin-bookings-header h2 {
+  margin-top: 8px;
+
+  font-family: Georgia, serif;
+
+  font-size: 30px;
+
+  font-weight: 500;
+
+  color: #3c2c30;
+}
+
+
+.booking-count {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+}
+
+
+.booking-count strong {
+  font-family: Georgia, serif;
+
+  color: #96536b;
+
+  font-size: 25px;
+
+  font-weight: 500;
+}
+
+
+.booking-count span {
+  color: #95878a;
+
+  font-size: 10px;
+
+  margin-top: 2px;
+}
+
+
+/* ========================================
+   ADMIN BOOKINGS
+======================================== */
+
+.admin-appointments {
+  width: calc(100% - 80px);
+
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* ========================================
+   APPOINTMENT CARD
+======================================== */
+
+.admin-appointment-card {
+  background: white;
+
+  border: 1px solid #eee4e3;
+
+  border-radius: 22px;
+
+  padding: 22px 25px;
+
+  display: grid;
+
+  grid-template-columns: 65px 1fr auto;
+
+  gap: 22px;
+
+  align-items: center;
+
+  box-shadow:
+    0 8px 25px rgba(60, 35, 40, 0.045);
+
+  transition: 0.3s;
+}
+
+
+.admin-appointment-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(60, 35, 40, 0.08);
+}
+
+
+/* ========================================
+   CUSTOMER AVATAR
+======================================== */
+
+.customer-avatar {
+  width: 58px;
+
+  height: 58px;
+
+  border-radius: 50%;
+
+  background: #f2e1e5;
+
+  color: #96536b;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-family: Georgia, serif;
+
+  font-size: 21px;
+
+  font-weight: 600;
+}
+
+
+/* ========================================
+   CUSTOMER DETAILS
+======================================== */
+
+.customer-label {
+  color: #a06c7c;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+.customer-details h3 {
+  margin-top: 5px;
+
+  font-family: Georgia, serif;
+
+  font-size: 21px;
+
+  font-weight: 500;
+
+  color: #3c2c30;
+}
+
+
+.customer-email {
+  margin-top: 4px;
+
+  color: #95878a;
+
+  font-size: 11px;
+}
+
+
+/* ========================================
+   SERVICE + DATE
+======================================== */
+
+.appointment-info-row {
+  display: flex;
+
+  gap: 50px;
+
+  margin-top: 17px;
+}
+
+
+.appointment-info-row > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.info-label {
+  color: #aa9a9e;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+}
+
+
+.appointment-info-row strong {
+  color: #5d484e;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+.admin-card-actions {
+  min-width: 150px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+}
+
+
+.status-label {
+  color: #aa9a9e;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  margin-bottom: 7px;
+}
+
+
+.admin-status-badge {
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: capitalize;
+}
+
+
+.status-dot {
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+
+.admin-status-badge.pending {
+  background: #fff4df;
+
+  color: #b17a2d;
+}
+
+
+.admin-status-badge.confirmed {
+  background: #eaf5ed;
+
+  color: #4f8b63;
+}
+
+
+.admin-status-badge.cancelled {
+  background: #fbeaec;
+
+  color: #c45d6b;
+}
+
+
+/* ========================================
+   ACTION BUTTONS
+======================================== */
+
+.admin-actions {
+  display: flex;
+
+  gap: 7px;
+
+  margin-top: 12px;
+}
+
+
+.admin-actions button {
+  border: none;
+
+  padding: 8px 13px;
+
+  border-radius: 18px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+
+.confirm-btn {
+  background: #96536b;
+
+  color: white;
+}
+
+
+.confirm-btn:hover {
+  background: #754153;
+}
+
+
+.cancel-btn {
+  background: #f5ecee;
+
+  color: #a64f62;
+}
+
+
+.cancel-btn:hover {
+  background: #f0dfe3;
+}
+
+
+/* ========================================
+   ERROR
+======================================== */
+
+.admin-error {
+  width: calc(100% - 80px);
+
+  max-width: 700px;
+
+  margin: 35px auto;
+
+  padding: 22px;
+
+  background: #fff0f1;
+
+  border: 1px solid #f0d3d6;
+
+  border-radius: 18px;
+
+  text-align: center;
+
+  color: #b54d5c;
+}
+
+
+.admin-error strong {
+  font-size: 14px;
+}
+
+
+.admin-error p {
+  margin-top: 5px;
+
+  font-size: 12px;
+}
+
+
+/* ========================================
+   NO APPOINTMENTS
+======================================== */
+
+.no-appointments {
+  width: min(500px, calc(100% - 40px));
+
+  margin: 60px auto;
+
+  padding: 50px 35px;
+
+  background: white;
+
+  border: 1px solid #eee4e3;
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px rgba(60, 35, 40, 0.06);
+}
+
+
+.empty-admin-icon {
+  width: 60px;
+
+  height: 60px;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  background: #f3e5e8;
+
+  color: #96536b;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 25px;
+}
+
+
+.no-appointments > span {
+  display: block;
+
+  margin-top: 18px;
+
+  color: #a06c7c;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+.no-appointments h3 {
+  margin-top: 8px;
+
+  font-family: Georgia, serif;
+
+  font-size: 26px;
+
+  font-weight: 500;
+}
+
+
+.no-appointments p {
+  margin-top: 10px;
+
+  color: #817477;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   ADMIN BOTTOM NAV
+======================================== */
+
+.admin-bottom-nav {
+  position: fixed;
+
+  left: 50%;
+
+  bottom: 18px;
+
+  transform: translateX(-50%);
+
+  width: min(500px, calc(100% - 30px));
+
+  padding: 10px 15px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #eee4e5;
+
+  border-radius: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-around;
+
+  box-shadow:
+    0 10px 35px rgba(50, 30, 35, 0.13);
+
+  backdrop-filter: blur(15px);
+
+  z-index: 1000;
+}
+
+
+.admin-bottom-nav button {
+  border: none;
+
+  background: transparent;
+
+  color: #9b8d90;
+
+  min-width: 90px;
+
+  padding: 4px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 4px;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+
+.admin-nav-icon {
+  width: 36px;
+
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+
+.admin-bottom-nav button.active {
+  color: #96536b;
+
+  font-weight: 700;
+}
+
+
+.admin-bottom-nav button.active .admin-nav-icon {
+  background: #f1e2e6;
+
+  border-radius: 11px;
+}
+
+
+.admin-bottom-nav button:hover {
+  color: #96536b;
+}
+
+
+/* ========================================
+   MOBILE ADMIN
+======================================== */
+
+@media (max-width: 700px) {
+
+  .admin-page {
+    padding-bottom: 115px;
+  }
+
+
+  .admin-header {
+    width: calc(100% - 30px);
+
+    padding: 22px 0;
+  }
+
+
+  .admin-brand-mark {
+    width: 48px;
+
+    height: 48px;
+
+    font-size: 15px;
+  }
+
+
+  .admin-brand h1 {
+    font-size: 22px;
+  }
+
+
+  .admin-brand p {
+    font-size: 10px;
+  }
+
+
+  .admin-logout {
+    padding: 9px 17px;
+
+    font-size: 11px;
+  }
+
+
+  .admin-banner {
+    width: calc(100% - 30px);
+
+    min-height: 330px;
+
+    margin-top: 10px;
+
+    margin-bottom: 35px;
+  }
+
+
+  .admin-banner-content {
+    width: 100%;
+
+    padding: 40px 28px;
+
+    align-self: flex-start;
+  }
+
+
+  .admin-banner-content h2 {
+    font-size: 36px;
+  }
+
+
+  .admin-banner-content p {
+    font-size: 12px;
+
+    max-width: 320px;
+  }
+
+
+  .admin-banner-decoration {
+    right: -180px;
+
+    top: 90px;
+
+    opacity: 0.7;
+  }
+
+
+  .admin-bookings-header {
+    width: calc(100% - 30px);
+
+    align-items: center;
+  }
+
+
+  .admin-bookings-header h2 {
+    font-size: 25px;
+  }
+
+
+  .booking-count strong {
+    font-size: 20px;
+  }
+
+
+  .admin-appointments {
+    width: calc(100% - 30px);
+
+    gap: 12px;
+  }
+
+
+  .admin-appointment-card {
+    grid-template-columns: 50px 1fr;
+
+    gap: 15px;
+
+    padding: 18px;
+  }
+
+
+  .customer-avatar {
+    width: 48px;
+
+    height: 48px;
+
+    font-size: 17px;
+  }
+
+
+  .customer-details h3 {
+    font-size: 18px;
+  }
+
+
+  .customer-email {
+    font-size: 10px;
+
+    word-break: break-word;
+  }
+
+
+  .appointment-info-row {
+    gap: 20px;
+
+    margin-top: 15px;
+  }
+
+
+  .admin-card-actions {
+    grid-column: 2;
+
+    align-items: flex-start;
+
+    margin-top: 4px;
+  }
+
+
+  .admin-actions {
+    width: 100%;
+  }
+
+
+  .admin-actions button {
+    flex: 1;
+  }
+
+
+  .admin-bottom-nav {
+    bottom: 12px;
+
+    width: calc(100% - 24px);
+
+    padding: 9px 5px;
+
+    border-radius: 22px;
+  }
+
+
+  .admin-bottom-nav button {
+    min-width: 70px;
+
+    font-size: 9px;
+  }
+
+}
+
+
+
+/* =========================================================
+   LOGIN PAGE - GLOW & GRACE
+========================================================= */
+
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(150, 83, 107, 0.10),
+      transparent 28%
+    ),
+    #faf7f5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px 20px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SALON HEADING
+========================================================= */
+
+.salon-heading {
+  margin: 0 0 25px;
+
+  color: #3c2c30;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 38px;
+  font-weight: 500;
+
+  letter-spacing: -0.5px;
+
+  text-align: center;
+}
+
+.salon-heading::after {
+  content: "";
+
+  display: block;
+
+  width: 45px;
+  height: 2px;
+
+  margin: 12px auto 0;
+
+  background: #96536b;
+}
+
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.login-card {
+  width: 900px;
+  max-width: 100%;
+
+  min-height: 540px;
+
+  background: #ffffff;
+
+  border: 1px solid #eee5e4;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-columns: 44% 56%;
+
+  box-shadow:
+    0 20px 60px rgba(60, 35, 45, 0.12);
+}
+
+
+/* =========================================================
+   LOGIN IMAGE
+========================================================= */
+
+.login-image {
+  position: relative;
+
+  min-height: 540px;
+
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(60, 30, 42, 0.05),
+      rgba(60, 30, 42, 0.48)
+    ),
+    url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85");
+
+  background-size: cover;
+
+  background-position: center;
+
+  overflow: hidden;
+}
+
+
+/* Dark image overlay */
+
+.login-image::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(45, 25, 33, 0.58),
+      transparent 60%
+    );
+}
+
+
+/* Image title */
+
+.login-image::after {
+  content: "Glow & Grace";
+
+  position: absolute;
+
+  left: 38px;
+  bottom: 38px;
+
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 32px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.3px;
+
+  text-shadow:
+    0 3px 15px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(150, 83, 107, 0.08),
+      transparent 55%
+    );
+}
+
+
+/* =========================================================
+   LOGIN CONTENT
+========================================================= */
+
+.login-content {
+  padding: 60px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOGIN TITLE
+========================================================= */
+
+.login-content h2 {
+  margin: 0;
+
+  color: #3c2c30;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 34px;
+
+  font-weight: 500;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.login-subtitle {
+  margin: 12px 0 30px;
+
+  color: #948589;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LOGIN FORM
+========================================================= */
+
+.login-content form {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.login-content input {
+  width: 100%;
+
+  height: 50px;
+
+  padding: 0 18px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e3d9dc;
+
+  border-radius: 14px;
+
+  outline: none;
+
+  background: #fcfafb;
+
+  color: #443438;
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.login-content input::placeholder {
+  color: #aaa0a3;
+}
+
+
+.login-content input:hover {
+  border-color: #d5c3c8;
+}
+
+
+.login-content input:focus {
+  border-color: #96536b;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(150, 83, 107, 0.08);
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login-button {
+  width: 100%;
+
+  height: 50px;
+
+  margin-top: 7px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background: #96536b;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.login-button:hover {
+  background: #774255;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 22px rgba(150, 83, 107, 0.22);
+}
+
+
+.login-button:active {
+  transform: translateY(0);
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   OR
+========================================================= */
+
+.or-text {
+  margin: 24px 0 18px;
+
+  color: #c0b5b8;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   SIGN UP TEXT
+========================================================= */
+
+.signup-text {
+  margin: 0;
+
+  color: #8f8386;
+
+  font-size: 12px;
+
+  text-align: center;
+
+  line-height: 1.6;
+}
+
+
+.signup-link {
+  color: #96536b;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+
+.signup-link:hover {
+  color: #6f3d50;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   MOBILE - TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .login-page {
+    padding: 25px 15px;
+
+    justify-content: center;
+  }
+
+
+  .salon-heading {
+    font-size: 31px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .login-card {
+    width: 100%;
+
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    border-radius: 25px;
+  }
+
+
+  /* Image becomes top section */
+
+  .login-image {
+    width: 100%;
+
+    height: 200px;
+
+    min-height: 200px;
+
+    background-position: center;
+  }
+
+
+  .login-image::after {
+    left: 25px;
+
+    bottom: 25px;
+
+    font-size: 27px;
+  }
+
+
+  .login-content {
+    padding: 35px 25px 30px;
+  }
+
+
+  .login-content h2 {
+    font-size: 28px;
+  }
+
+
+  .login-subtitle {
+    margin-bottom: 25px;
+
+    font-size: 12px;
+  }
+
+
+  .login-content input {
+    height: 48px;
+  }
+
+
+  .login-button {
+    height: 48px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .login-page {
+    padding: 20px 12px;
+  }
+
+
+  .salon-heading {
+    font-size: 28px;
+
+    margin-bottom: 18px;
+  }
+
+
+  .login-card {
+    border-radius: 22px;
+  }
+
+
+  .login-image {
+    height: 175px;
+
+    min-height: 175px;
+  }
+
+
+  .login-image::after {
+    left: 20px;
+
+    bottom: 20px;
+
+    font-size: 24px;
+  }
+
+
+  .login-content {
+    padding: 30px 20px 25px;
+  }
+
+
+  .login-content h2 {
+    font-size: 26px;
+  }
+
+
+  .login-subtitle {
+    font-size: 11px;
+
+    margin-bottom: 22px;
+  }
+
+
+  .login-content input {
+    height: 46px;
+
+    border-radius: 12px;
+
+    font-size: 12px;
+  }
+
+
+  .login-button {
+    height: 46px;
+
+    font-size: 11px;
+  }
+
+
+  .or-text {
+    margin: 20px 0 15px;
+
+    font-size: 9px;
+  }
+
+
+  .signup-text {
+    font-size: 11px;
+  }
+}
+
+
+
+
+/* =========================================================
+   SIGNUP PAGE - GLOW & GRACE
+========================================================= */
+
+.signup-page {
+  min-height: 100vh;
+  width: 100%;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(150, 83, 107, 0.10),
+      transparent 30%
+    ),
+    #faf7f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px 20px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SIGNUP CARD
+========================================================= */
+
+.signup-card {
+  width: 900px;
+  max-width: 100%;
+
+  min-height: 590px;
+
+  background: #ffffff;
+
+  border: 1px solid #eee5e4;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-columns: 44% 56%;
+
+  box-shadow:
+    0 20px 60px rgba(60, 35, 45, 0.12);
+}
+
+
+/* =========================================================
+   LEFT IMAGE / BRAND SECTION
+========================================================= */
+
+.signup-top {
+  position: relative;
+
+  min-height: 590px;
+
+  padding: 45px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(60, 30, 42, 0.05),
+      rgba(60, 30, 42, 0.65)
+    ),
+    url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+
+/* Dark overlay */
+
+.signup-top::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(45, 25, 33, 0.70),
+      rgba(45, 25, 33, 0.05) 65%
+    );
+}
+
+
+/* =========================================================
+   BRAND ICON
+========================================================= */
+
+.signup-icon {
+  display: none;
+}
+
+
+/* =========================================================
+   BRAND TITLE
+========================================================= */
+
+.signup-top h1 {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 0 0 10px;
+
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 36px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.3px;
+}
+
+
+.signup-top h1::after {
+  content: "";
+
+  display: block;
+
+  width: 45px;
+
+  height: 2px;
+
+  margin-top: 14px;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   BRAND SUBTITLE
+========================================================= */
+
+.signup-top p {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 0;
+
+  max-width: 280px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   SIGNUP CONTENT
+========================================================= */
+
+.signup-content {
+  padding: 55px 60px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.signup-content h2 {
+  margin: 0;
+
+  color: #3c2c30;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 34px;
+
+  font-weight: 500;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.signup-subtitle {
+  margin: 12px 0 28px;
+
+  color: #948589;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.signup-content form {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.signup-content label {
+  margin-top: 8px;
+
+  color: #554449;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.signup-content input {
+  width: 100%;
+
+  height: 48px;
+
+  padding: 0 17px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e3d9dc;
+
+  border-radius: 13px;
+
+  outline: none;
+
+  background: #fcfafb;
+
+  color: #443438;
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.signup-content input::placeholder {
+  color: #aaa0a3;
+}
+
+
+.signup-content input:hover {
+  border-color: #d5c3c8;
+}
+
+
+.signup-content input:focus {
+  border-color: #96536b;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(150, 83, 107, 0.08);
+}
+
+
+/* =========================================================
+   CREATE ACCOUNT BUTTON
+========================================================= */
+
+.signup-button {
+  width: 100%;
+
+  height: 50px;
+
+  margin-top: 17px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background: #96536b;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.signup-button:hover {
+  background: #774255;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 22px rgba(150, 83, 107, 0.22);
+}
+
+
+.signup-button:active {
+  transform: translateY(0);
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   LOGIN TEXT
+========================================================= */
+
+.signup-login-text {
+  margin: 22px 0 0;
+
+  color: #8f8386;
+
+  font-size: 12px;
+
+  text-align: center;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   LOGIN LINK
+========================================================= */
+
+.login-link {
+  color: #96536b;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+
+.login-link:hover {
+  color: #6f3d50;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .signup-page {
+    padding: 25px 15px;
+  }
+
+
+  .signup-card {
+    width: 100%;
+
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    border-radius: 25px;
+  }
+
+
+  /* -------------------------------------------------------
+     TOP IMAGE
+  ------------------------------------------------------- */
+
+  .signup-top {
+    height: 300px;
+
+    min-height: 300px;
+
+    padding: 30px 25px;
+
+    justify-content: flex-end;
+
+    background-position: center;
+  }
+
+
+  .signup-top h1 {
+    font-size: 30px;
+
+    margin-bottom: 7px;
+  }
+
+
+  .signup-top h1::after {
+    width: 40px;
+
+    margin-top: 11px;
+  }
+
+
+  .signup-top p {
+    font-size: 12px;
+
+    max-width: 230px;
+  }
+
+
+  /* -------------------------------------------------------
+     FORM SECTION
+  ------------------------------------------------------- */
+
+  .signup-content {
+    padding: 35px 25px 30px;
+  }
+
+
+  .signup-content h2 {
+    font-size: 28px;
+  }
+
+
+  .signup-subtitle {
+    font-size: 12px;
+
+    margin-bottom: 22px;
+  }
+
+
+  .signup-content input {
+    height: 47px;
+  }
+
+
+  .signup-button {
+    height: 48px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .signup-page {
+    padding: 18px 12px;
+  }
+
+
+  .signup-card {
+    border-radius: 22px;
+  }
+
+
+  /* -------------------------------------------------------
+     TOP IMAGE
+  ------------------------------------------------------- */
+
+  .signup-top {
+    height: 280px;
+
+    min-height: 280px;
+
+    padding: 25px 20px;
+  }
+
+
+  .signup-top h1 {
+    font-size: 26px;
+  }
+
+
+  .signup-top h1::after {
+    width: 36px;
+
+    margin-top: 9px;
+  }
+
+
+  .signup-top p {
+    font-size: 10px;
+
+    max-width: 210px;
+  }
+
+
+  /* -------------------------------------------------------
+     FORM
+  ------------------------------------------------------- */
+
+  .signup-content {
+    padding: 28px 20px 24px;
+  }
+
+
+  .signup-content h2 {
+    font-size: 26px;
+  }
+
+
+  .signup-subtitle {
+    font-size: 11px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .signup-content label {
+    font-size: 11px;
+  }
+
+
+  .signup-content input {
+    height: 45px;
+
+    border-radius: 11px;
+
+    font-size: 12px;
+  }
+
+
+  .signup-button {
+    height: 46px;
+
+    font-size: 11px;
+  }
+
+
+  .signup-login-text {
+    font-size: 11px;
+
+    margin-top: 18px;
+  }
+}
